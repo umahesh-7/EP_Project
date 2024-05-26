@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Lead
+</title>
+<style>
+body {
+ margin: 0;
+
+background-color:darkseagreen;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.part1 {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.part1 a {
+  float: left;
+  padding:  14px 8.5%;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.part2{
+   
+    margin:9% 40%;
+    padding:20 20
+}
+.part2 input{
+    padding: 10 20
+}
+.part2 button{
+    padding:10 20;
+
+}
+.active{
+background-color:#4CAF50;
+}
+
+</style>
+<script>
+  function validate_lead(){
+       
+        var uname=document.getElementById("user").value;
+        var pass=document.getElementById("pwd").value;
+
+        if(uname.length==0 && pass.length==0){
+            alert("Both username and password are required");
+            document.getElementById("user").focus();
+            return false;
+        }
+
+        if(uname.length==0){
+            alert("username is required");
+            document.getElementById("user").focus();
+            return false;
+        }
+        if(pass.length==0){
+            alert("password is required");
+            document.getElementById("pwd").focus();
+            return false;
+        }
+
+        
+       
+        if(uname!=null && pass!=null){
+           window.location="HomePage.html"
+        }
+
+    }
+
+  </script>
+</head>
+<body>
+<div class="part1">
+  <a  href="HomePage.html" onclick=><b> Home</b></a> 
+  
+  <a class="active" href="#"> Team Lead</a>
+  <a href="TeamMemberLogin.html"> Team Member</a> 
+  <a href="#"> Contact us</a>
+  
+</div>
+<div class="part2">
+    
+         <h3 align="center">Leader Login</h3>
+       <form name="team_member_signup" method="post" action="leaderlogincheck.jsp" onsubmit=" return validate_lead()">
+<table align="center" width=300 height=200>
+   <tr><td>Username:</td><td><input type="number" name="user"></td></tr>
+   <tr><td>Password:</td><td><input type="password" name="pwd"></td></tr>   
+   
+<tr>        <td colspan=2>
+            <input type="submit" value="Login" >
+          
+        </td>
+    </tr>
+</table>
+</form>
+        
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.part2{
+   
+    margin:9% 40%;
+    padding:20 20
+}
+.part2 input{
+    padding: 10 20
+}
+.part2 button{
+    padding:10 20;
+
+}
+body {
+ margin: 0;
+
+
+background-color:darkseagreen;
+font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding:14px 100px;
+  text-decoration: none;
+}
+
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+ 
+}
+.active{
+background-color:green;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a  href="leaderhomepage.html">Home</a></li>
+
+  <li class="dropdown">
+    <a class="active" href="javascript:void(0)" class="dropbtn">Events</a>
+    <div class="dropdown-content">
+      <a href="#">View All Events</a>
+      <a href="#">Create New Event</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Attendence</a>
+    <div class="dropdown-content">
+      <a href="#">View Attendence</a>
+      <a href="#">Mark Attendence</a>
+    </div>
+    <li><a  href="#home">Logout</a></li>
+  </li>
+  
+</ul>
+<div class="part2">
+    
+         <h3 align="center"><b>Create New Event</b></h3>
+       <form name="team_member_signup" method="post" action="createevents.jsp" ">
+<table align="center" width=500 height=200>
+  <tr>
+  <td>Event Id</td>
+  <td><input type="text" name="eid"></td>
+  </tr>
+  <tr>
+  <td>Event Name</td>
+  <td><input type="text" name="ename"></td>
+  </tr>
+  <tr>
+  <td>Event Category</td>
+  <td><input type="radio" name="ecat" value="technical">Technical<input type="radio" name="ecat" value="nontechnical">Non-Technical</td>
+  </tr>
+  <tR>
+  <td>Event StartDate:</td>
+  <td><input type="date" name="sdate"></td>
+  </tR>
+   <tR>
+  <td>Event EndDate:</td>
+  <td><input type="date" name="edate"></td>
+  </tR>
+   <tR>
+  <td>Event venue:</td>
+  <td><input type="text" name="evenue"></td>
+  </tR>
+  <tr>
+  <td>Event Description:</td>
+  <td><textarea name="desc" ></textarea></td>
+  </tr>
+<tr >        <td>
+            <input type="submit" value="Create" >
+          
+        </td>
+    </tr>
+</table>
+</form>
+        
+       
+    </div>
+
+<table></table>
+</body>
+</html>

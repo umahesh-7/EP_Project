@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Manager
+</title>
+<style>
+body {
+ margin: 0;
+
+background-color:darkseagreen;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.part1 {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.part1 a {
+  float: left;
+  padding:  14px 5%;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.part2{
+   
+    margin:9% 40%;
+    padding:20 20
+}
+.part2 input{
+    padding: 10 20
+}
+.part2 button{
+    padding:10 20;
+
+}
+.active{
+background-color:#4CAF50;
+}
+
+</style>
+<script>
+  function validate_manager(){
+      
+	  var uname=document.getElementById("user").value;
+      var pass=document.getElementById("pwd").value;
+
+      if(uname.length==0 && pass.length==0){
+          alert("Both username and password are required");
+          document.getElementById("user").focus();
+          return false;
+      }
+
+      if(uname.length==0){
+          alert("username is required");
+          document.getElementById("user").focus();
+          return false;
+      }
+      if(pass.length==0){
+          alert("password is required");
+          document.getElementById("pwd").focus();
+          return false;
+      }
+
+      if(uname!=null && pass!=null){
+          window.location="HomePage.html";
+       }
+    }
+  </script>
+</head>
+<body>
+<div class="part1">
+   <a href="HomePage.html" ><b> Home</b></a> 
+
+  <a href="TeamLeaderLogin.html"> Team Lead</a>
+  <a href="TeamMemberLogin.html"> Team Member</a> 
+  <a href="#"> Contact us</a> 
+  
+</div>
+<div class="part2">
+    
+         <h3 align="center">Manager Login</h3>
+       
+        <p><b>username:</b></p>
+
+         <input type=text name="username" id="user" placeholder="Username" >
+         <p><b>password:</b></p>
+         <input type=password name="password" id="pwd" placeholder="password">
+         <br>
+         <br>
+         <button onclick="validate_manager()">Login</button><br><br>
+         
+       
+
+        
+     
+    </div>
+</body>
+</html>

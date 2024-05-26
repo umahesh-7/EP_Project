@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>Member Signup</title>
+</title>
+<style>
+body {
+ margin: 0;
+
+background-color:darkseagreen;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.part1 {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.part1 a {
+  float: left;
+  padding:  14px 5%;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.part2{
+   
+    margin:9% 40%;
+    padding:20 20
+}
+.part2 input{
+    padding:5 5
+}
+.part2 button{
+    padding:10 50;
+
+}
+.active{
+background-color:#4CAF50;
+}
+
+</style>
+<script>
+    function upper(id){
+                var a= document.getElementById(id).value;
+                a=a.toUpperCase();
+                document.getElementById(id).value=a;
+                }
+
+                function validate_team_member_signup(){
+                    var fname=document.team_member_signup.firstname.value;
+                    var lname=document.team_member_signup.lastname.value;
+                    var email=document.team_member_signup.email.value;
+                    var phone=document.team_member_signup.phone.value;
+                    if(fname.length==0){
+                        alert("First name is required.");
+                        document.team_member_signup.firstname.focus();
+                        return false;
+                    }
+
+                    if(lname.length==0){
+                        alert("Last name is required.");
+                        document.team_member_signup.lastname.focus();
+                        return false;
+                    }
+
+                    if(email.length==0){
+                        alert("Email id is required.")
+                        document.team_member_signup.email.focus();
+                        return false;
+                    }
+
+                    if(phone.length==0){
+                        alert("phone numder is required.")
+                        document.team_member_signup.phone.focus();
+                        return false;
+                    }
+
+                    var atpos = email.indexOf('@');
+                    var dotpos = email.lastIndexOf('.');
+                    if(atpos<5 || dotpos-atpos<5)
+                    {
+                        alert("Enter a valid email address");
+                        document.team_member_signup.email.focus();
+                        return false;
+                    }
+
+                    if(phone.length!=10)
+                    {
+                        alert("Mobile number should have 10 digits.");
+                        document.team_member_signup.phone.focus();
+                        return false;
+                        }
+                    if(phone.charAt(0)<'6')
+                    {
+                        alert("Mobile no must be started with 6 or 7 or 8 or 9 !!!");
+                        document.team_member_signup.phone.focus();
+                        return false;
+                    }
+                    if(!(document.team_member_signup.rules.checked))
+                     {
+                         alert("You must agree for terms and conditions");
+                         return false;
+                         }
+
+                }
+  </script>
+</head>
+<body>
+    <div class="part1">
+        <a  href="HomePage.html" ><b> Home</b></a> 
+       
+        <a  href="TeamLeaderLogin.html"> Team Lead</a>
+        <a class="active" href="#" > Team Member</a> 
+        <a href="#"> Contact us</a> 
+        
+      </div>
+<div class="part2">
+    
+    <h3 align="center">Team Member Signup</h3><br>
+    
+<form name="team_member_signup" method="post" action="teammemberregister.jsp" onsubmit=" return validate_team_member_signup()">
+<table align="center" width=300 height=200>
+    <tr>
+        <td>First Name: </td>
+        <td><input type="text" name="firstname" id="firstname" maxlength=30 onkeyup="upper(id)"></td>
+    </tr>
+
+    
+
+    <tr>
+        <td>Last Name: </td>
+        <td><input type="text" name="lastname" id="lastname" maxlength=30 onkeyup="upper(id)"></td>
+    </tr>
+
+    <tr>
+        <td>Username </td>
+        <td><input type="text" name="user"  required></td>
+    </tr>
+
+    <tr>
+        <td>email id: </td>
+        <td><input type="text" name="email" id="email" ></td>
+    </tr>
+
+    <tr>
+        <td>Phone Number: </td>
+        <td><input type="text" name="phone" id="phone"></td>
+    </tr>
+    <tr>
+    <td>Password:</td>
+    <td><input type="password" name="pwd"></td>
+    </tr>
+   
+   </table>
+<table align="center">
+    <tr>
+        <td>
+            <input type="checkbox" name="rules" id="rules">Are you agree for terms & conditions.
+        </td>
+    </tr>
+</table>
+<table align="center">
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="submit" >
+            <input type="reset" value="clear">
+        </td>
+    </tr>
+</table>
+       if you already have an account please <a href="TeamMemberLogin.html">login</a>
+       
+    </div>
+</body>
+</html>
